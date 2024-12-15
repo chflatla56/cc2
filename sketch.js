@@ -271,7 +271,7 @@ function speechBubble() {
   rect(width*0.6375, height*0.3125, 75, 40, 70);
 
   text("Help me pick", width*0.6083333333, heught*0.20625);
-  text("out an outfit", 0.604166667, height*0.25);
+  text("out an outfit", width*0.604166667, height*0.25);
   text("for the day!", width*0.6125, height*0.29375);
 
   fill(250);
@@ -312,39 +312,39 @@ function drawPage() {
         text("Cat!", width*0.458333333, height*0.15625);
         textSize(30);
         text("Literature!", width*0.375, height*0.2875);
-        text("Gemini!", width*0.375, 470);
-        text("Burgundy!", width*0.375, 580);
-        text("Sushi!", width*0.375, 690);
+        text("Gemini!", width*0.375, height*0.5875);
+        text("Burgundy!", width*0.375, height*0.725);
+        text("Sushi!", width*0.375, height*0.8625);
       } else if (bunnyPage) {
         textSize(40);
         text("Bunny!", width*0.458333333, height*0.15625);
         textSize(30);
         text("Architecture!", width*0.375, height*0.2875);
-        text("Cancer!", width*0.375, 470);
-        text("Brown!", width*0.375, 580);
-        text("Carrot Cake!", width*0.375, 690);
+        text("Cancer!", width*0.375, height*0.5875);
+        text("Brown!", width*0.375, height*0.725);
+        text("Carrot Cake!", width*0.375, height*0.8625);
       } else if (mousePage) {
         textSize(40);
         text("Mouse!", width*0.458333333, height*0.15625);
         textSize(30);
         text("Film!", width*0.375, height*0.2875);
-        text("Aquarius!", width*0.375, 470);
-        text("Pink!", width*0.375, 580);
-        text("Mac n' Cheese!", width*0.375, 690);
+        text("Aquarius!", width*0.375, height*0.5875);
+        text("Pink!", width*0.375, height*0.725);
+        text("Mac n' Cheese!", width*0.375, height*0.8625);
       } else if (frogPage) {
         textSize(40);
         text("Frog!", width*0.458333333, height*0.15625);
         textSize(30);
-        text("Environmental Science!", 450, height*0.2875);
-        text("Pisces!", width*0.375, 470);
-        text("Green!", width*0.375, 580);
-        text("Flies! (lol)", 450, 690);
+        text("Environmental Science!", width*0.375, height*0.2875);
+        text("Pisces!", width*0.375, height*0.5875);
+        text("Green!", width*0.375, height*0.725);
+        text("Flies! (lol)", width*0.375, height*0.8625);
       }
-      text("Today's Weather:", width*0.375, 300);
-      text("" + weather1[info1] + " and " + weather2[info2] + "!", width*0.375, 350);
+      text("Today's Weather:", width*0.375, height*0.375);
+      text("" + weather1[info1] + " and " + weather2[info2] + "!", width*0.375, height*0.4375);
 
       fill(255);
-      text("X", 715, 110);
+      text("X", width*0.595833333, height*0.1375);
     } 
   } else {
     speechBubble();
@@ -366,52 +366,52 @@ function drawSavePage() {
   }
 
   fill(255);
-  rect(25, 675, 150, 80, 70);
-  rect(1025, 675, 150, 80, 70);
-  rect(200, 675, 150, 80, 70);
+  rect(width*0.0208333333, height*0.84375, 150, 80, 70);
+  rect(width*0.854166667, height*0.84375, 150, 80, 70);
+  rect(width*0.166666667, height*0.84375, 150, 80, 70);
 
   fill(0);
-  text("home", 65, 730);
-  text("save", 1070, 725);
-  text("back", 245, 730);
+  text("home", width*0.0541666667, height*0.9125);
+  text("save", width*0.891666667, height*0.90625);
+  text("back", width*0.204166667, height*0.9125);
 
   textSize(30);
   fill(255);
-  rect(700, 100, 200, 200, 90);
+  rect(width*0.583333333, height*0.125, 200, 200, 90);
 
   fill(0);
-  text("Thanks for", 725, 190);
-  text("your help!", 730, 240);
+  text("Thanks for", width*0.604166667, height*0.2375);
+  text("your help!", width*0.608333333, 240);
 }
 
 function mousePressed() {
   if (welcomePage) {
-    if (mouseY >= 235 && mouseY <= 690) {
-      if (mouseX >= 10 && mouseX <= 230) {
+    if (mouseY >= height*0.29375 && mouseY <= height*0.8625) {
+      if (mouseX >= width*0.00833333333 && mouseX <= width*0.191666667) {
         dogPage = true;
         welcomePage = false;
         characterPage = true;
         savePage = false;
         buttonClick.play();
-      } else if (mouseX >= 250 && mouseX <= 460) {
+      } else if (mouseX >= width*0.208333333 && mouseX <= width*0.383333333) {
         catPage = true;
         welcomePage = false;
         characterPage = true;
         savePage = false;
         buttonClick.play();
-      } else if (mouseX >= 490 && mouseX <= 705) {
+      } else if (mouseX >= width*0.408333333 && mouseX <= width*0.5875) {
         bunnyPage = true;
         welcomePage = false;
         characterPage = true;
         savePage = false;
         buttonClick.play();
-      } else if (mouseX >= 727 && mouseX <= 947) {
+      } else if (mouseX >= width*0.605833333 && mouseX <= width*0.789166667) {
         mousePage = true;
         welcomePage = false;
         characterPage = true;
         savePage = false;
         buttonClick.play();
-      } else if (mouseX >= 965 && mouseX <= 1192){
+      } else if (mouseX >= width*0.804166667 && mouseX <= width*0.993333333){
         frogPage = true;
         welcomePage = false;
         characterPage = true;
@@ -423,29 +423,29 @@ function mousePressed() {
   }
 
   if (characterPage && click) {
-    if (mouseX >= 850 && mouseX <= 900) {
-      if (mouseY >= 150 && mouseY <= 180) {
+    if (mouseX >= width*0.708333333 && mouseX <= width*0.75) {
+      if (mouseY >= height*0.1875 && mouseY <= height*0.225) {
         if (accessoryCount < 21) {
           accessoryCount++;
         } else if (accessoryCount == 21) {
           accessoryCount = 18;
         }
         buttonClick.play();
-      } else if (mouseY >= 300 && mouseY <= 330) {
+      } else if (mouseY >= height*0.375 && mouseY <= height*0.4125) {
         if (topCount < 5) {
           topCount++;
         } else if (topCount == 5) {
           topCount = 1;
         }
         buttonClick.play();
-      } else if (mouseY >= 450 && mouseY <= 480) {
+      } else if (mouseY >= height*0.5625 && mouseY <= height*0.6) {
         if (bottomCount < 11) {
           bottomCount++;
         } else if (bottomCount == 11) {
           bottomCount = 7;
         }
         buttonClick.play();
-      } else if (mouseY >= 600 && mouseY <= 630) {
+      } else if (mouseY >= height*0.75 && mouseY <= height*0.7875) {
         if (shoeCount < 17) {
           shoeCount++;
         } else if (shoeCount == 17) {
@@ -453,29 +453,29 @@ function mousePressed() {
         }
         buttonClick.play();
       } 
-    } else if (mouseX >= 300 && mouseX <= 350) {
-      if (mouseY >= 150 && mouseY <= 180) {
+    } else if (mouseX >= width*0.25 && mouseX <= width*0.291666667) {
+      if (mouseY >= height*0.1875 && mouseY <= height*0.225) {
         if (accessoryCount > 18) {
           accessoryCount--;
         } else if (accessoryCount <= 18) {
           accessoryCount = 21;
         }
         buttonClick.play();
-      } else if (mouseY >= 300 && mouseY <= 330) { 
+      } else if (mouseY >= height*0.375 && mouseY <= height*0.4125) { 
         if (topCount > 1) {
           topCount--;
         } else if (topCount <= 1) {
           topCount = 5;
         }
         buttonClick.play();
-      } else if (mouseY >= 450 && mouseY <= 480) {
+      } else if (mouseY >= height*0.5625 && mouseY <= height*0.6) {
         if (bottomCount > 7) {
           bottomCount--;
         } else if (bottomCount <= 7) {
           bottomCount = 11;
         }
         buttonClick.play();
-      } else if (mouseY >= 600 && mouseY <= 630) {
+      } else if (mouseY >= height*0.75 && mouseY <= height*0.7875) {
         if (shoeCount > 13) {
           shoeCount--;
         } else if (shoeCount <= 13) {
@@ -485,26 +485,26 @@ function mousePressed() {
       }
     }
 
-    if (mouseX >= 25 && mouseX <= 175 && mouseY >= 45 && mouseY <= 125 && !info) {
+    if (mouseX >= width*0.0208333333 && mouseX <= width*0.145833333 && mouseY >= height*0.05625 && mouseY <= height*0.15625 && !info) {
       info = true;
       buttonClick.play();
     } 
 
-    if (mouseX >= 705 && mouseX <= 755 && mouseY >= 75 && mouseY <= 125 && info) {
+    if (mouseX >= width*0.5875 && mouseX <= width*0.629166667 && mouseY >= height*0.09375 && mouseY <= height*0.15625 && info) {
       info = false;
       buttonClick.play();
     }
   }
 
   if (characterPage && !click) {
-    if (mouseX >= 765 && mouseX <= 840 && mouseY >= 250 && mouseY <= 290) {
+    if (mouseX >= width*0.6375 && mouseX <= width*0.7 && mouseY >= height*0.3125 && mouseY <= height*0.3625) {
        click = true;
        buttonClick.play();
     }
   }
 
   if(characterPage || savePage) {
-    if (mouseY >= 675 && mouseY <= 755 && mouseX >= 25 && mouseX <= 175) {
+    if (mouseY >= height*0.84375 && mouseY <= height*0.94375 && mouseX >= width*0.0208333333 && mouseX <= width*0.145833333) {
         welcomePage = true;
         savePage = false;
         characterPage = false;
@@ -525,7 +525,7 @@ function mousePressed() {
     }
   }
 
-  if (mouseY >= 675 && mouseY <= 755 && mouseX >= 1025 && mouseX <= 1175) {
+  if (mouseY >= height*0.84375 && mouseY <= height*0.94375 && mouseX >= width*0.854166667 && mouseX <= width*0.979166667) {
     if (characterPage) {  
       welcomePage = false;
       savePage = true;
@@ -542,7 +542,7 @@ function mousePressed() {
   if (savePage) {
     flashCassanova.stop();
     bratzMagicHair.play();
-    if (mouseX >= 200 && mouseX <= 350 && mouseY >= 675 && mouseY <= 755){
+    if (mouseX >= width*0.166666667 && mouseX <= width*0.29166667 && mouseY >= height*0.84375 && mouseY <= height*0.94375){
       characterPage = true;
       savePage = false;
       buttonClick.play();
@@ -553,7 +553,7 @@ function mousePressed() {
     }
   }
 
-  if (mouseX >= 1100 && mouseX <= 1150 && mouseY >= 50 && mouseY <= 100){
+  if (mouseX >= width*0.916666667 && mouseX <= width*0.958333333 && mouseY >= height*0.0625 && mouseY <= height*0.125){
     if (sound) {
       sound = false;
       buttonClick.play();
