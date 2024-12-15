@@ -95,7 +95,7 @@ function preload() {
 }
 
 function setup() {
-  let canvas = createCanvas(1200, 800);
+  let canvas = createCanvas(1450, 750);
   canvas.parent("sketch");
 
   rand1 = int(random(1, 6));
@@ -118,9 +118,9 @@ function draw() {
     fill(255);
     textSize(60);
     textFont(hennyPenny);
-    text("~ fashion friends ~", width*0.291666667, height*0.15625);
+    text("~ fashion friends ~", width*0.310344828, height*0.15625-10);
     textSize(40);
-    text("select a character to start!",width*0.3125, height*0.95);
+    text("select a character to start!",width*0.310344828, height*0.95+10);
 
     if (!flashCassanova.isPlaying() && sound) {
       flashCassanova.play();
@@ -190,11 +190,11 @@ function drawFrog(x, y) {
 function drawWelcomePage() {
   push();
   scale(0.8);
-  drawDog(width*-0.1875, height*0.25);
-  drawCat(width*0.0625, height*0.25);
-  drawBunny(width*0.3125, height*0.25);
-  drawMouse(width*0.5625, height*0.25);
-  drawFrog(width*0.8125, height*0.25);
+  drawDog(width*-0.1875+50, height*0.25-30);
+  drawCat(width*0.0625+50, height*0.25-30);
+  drawBunny(width*0.3125+50, height*0.25-30);
+  drawMouse(width*0.5625+50, height*0.25-30);
+  drawFrog(width*0.8125+100, height*0.25-30);
   pop();
 
   topCount = 0;
@@ -204,28 +204,28 @@ function drawWelcomePage() {
 }
 
 function drawDogPage(){
-  drawDog(width*0.1875, 0);
-  drawOutfit(dogOptions, width*0.1875, 0);
+  drawDog(width*0.1875+100, 0);
+  drawOutfit(dogOptions, width*0.1875+100, 0);
 }
 
 function drawCatPage() {
-  drawCat(width*0.1875, 0);
-  drawOutfit(catOptions, width*0.1875, 0);
+  drawCat(width*0.1875+100, 0);
+  drawOutfit(catOptions, width*0.1875+100, 0);
 }
 
 function drawBunnyPage() {
-  drawBunny(width*0.1875, 50);
-  drawOutfit(bunnyOptions, width*0.1875, 0);
+  drawBunny(width*0.1875+100, 50);
+  drawOutfit(bunnyOptions, width*0.1875+100, 0);
 }
  
 function drawMousePage() {
-  drawMouse(width*0.1875, 0);
-  drawOutfit(mouseOptions, width*0.1875, 0);
+  drawMouse(width*0.1875+100, 0);
+  drawOutfit(mouseOptions, width*0.1875+100, 0);
 }
 
 function drawFrogPage() {
-  drawFrog(width*0.1875, 0);
-  drawOutfit(frogOptions, width*0.1875, 0);
+  drawFrog(width*0.1875+100, 0);
+  drawOutfit(frogOptions, width*0.1875+100, 0);
 }
 
 function drawOutfit(arr, x, y) {
@@ -258,8 +258,8 @@ function drawButtons() {
   rect(width*0.854166667, height*0.84375, 150, 80, 70);
 
   fill(0);
-  text("home", width*0.0541666667, height*0.9125);
-  text("finish", width*0.883333333, height*0.9125);
+  text("home", width*0.0541666667-5, height*0.9125);
+  text("finish", width*0.883333333-5, height*0.9125);
 }
 
 function speechBubble() {
@@ -268,14 +268,14 @@ function speechBubble() {
   rect(width*0.583333333, height*0.125, 200, 200, 90);
 
   fill(0);
-  rect(width*0.6375, height*0.3125, 75, 40, 70);
+  rect(width*0.6375-15, height*0.3125, 75, 40, 70);
 
-  text("Help me pick", width*0.6083333333, heught*0.20625);
-  text("out an outfit", width*0.604166667, height*0.25);
-  text("for the day!", width*0.6125, height*0.29375);
+  text("Help me pick", width*0.6083333333-10, height*0.20625);
+  text("out an outfit", width*0.604166667-10, height*0.25);
+  text("for the day!", width*0.6125-10, height*0.29375);
 
   fill(250);
-  text("ok!", width*0.654166667, height*0.35);
+  text("ok!", width*0.654166667-15, height*0.35);
 }
 
 function drawPage() {
@@ -287,7 +287,7 @@ function drawPage() {
 
     fill(0);
     textSize(30);
-    text("info", width*0.0625, height*0.125);
+    text("info", width*0.0625-10, height*0.125);
 
     if (info) {
       fill(255);
@@ -371,7 +371,7 @@ function drawSavePage() {
   rect(width*0.166666667, height*0.84375, 150, 80, 70);
 
   fill(0);
-  text("home", width*0.0541666667, height*0.9125);
+  text("home", width*0.0541666667-10, height*0.9125);
   text("save", width*0.891666667, height*0.90625);
   text("back", width*0.204166667, height*0.9125);
 
