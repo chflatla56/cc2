@@ -118,9 +118,9 @@ function draw() {
     fill(255);
     textSize(60);
     textFont(hennyPenny);
-    text("~ fashion friends ~", 350, 125);
+    text("~ fashion friends ~", width*0.291666667, height*0.15625);
     textSize(40);
-    text("select a character to start!", 375, 760);
+    text("select a character to start!",width*0.3125, height*0.95);
 
     if (!flashCassanova.isPlaying() && sound) {
       flashCassanova.play();
@@ -190,11 +190,11 @@ function drawFrog(x, y) {
 function drawWelcomePage() {
   push();
   scale(0.8);
-  drawDog(-225, 200);
-  drawCat(75, 200);
-  drawBunny(375, 200);
-  drawMouse(675, 200);
-  drawFrog(975, 200);
+  drawDog(width*-0.1875, height*0.25);
+  drawCat(width*0.0625, height*0.25);
+  drawBunny(width*0.3125, height*0.25);
+  drawMouse(width*0.5625, height*0.25);
+  drawFrog(width*0.8125, height*0.25);
   pop();
 
   topCount = 0;
@@ -204,28 +204,28 @@ function drawWelcomePage() {
 }
 
 function drawDogPage(){
-  drawDog(225, 0);
-  drawOutfit(dogOptions, 225, 0);
+  drawDog(width*0.1875, 0);
+  drawOutfit(dogOptions, width*0.1875, 0);
 }
 
 function drawCatPage() {
-  drawCat(225, 0);
-  drawOutfit(catOptions, 225, 0);
+  drawCat(width*0.1875, 0);
+  drawOutfit(catOptions, width*0.1875, 0);
 }
 
 function drawBunnyPage() {
-  drawBunny(225, 50);
-  drawOutfit(bunnyOptions, 225, 0);
+  drawBunny(width*0.1875, 50);
+  drawOutfit(bunnyOptions, width*0.1875, 0);
 }
  
 function drawMousePage() {
-  drawMouse(225, 0);
-  drawOutfit(mouseOptions, 225, 0);
+  drawMouse(width*0.1875, 0);
+  drawOutfit(mouseOptions, width*0.1875, 0);
 }
 
 function drawFrogPage() {
-  drawFrog(225, 0);
-  drawOutfit(frogOptions, 225, 0);
+  drawFrog(width*0.1875, 0);
+  drawOutfit(frogOptions, width*0.1875, 0);
 }
 
 function drawOutfit(arr, x, y) {
@@ -246,36 +246,36 @@ function drawButtons() {
   textSize(30);
   for (let r = 0; r < 600; r = r + 150) {
     fill(255);
-    rect(300, 150 + r, 50, 30, 90);
-    rect(850, 150 + r, 50, 30, 90);
+    rect(width*0.25, height*0.1875 + r, 50, 30, 90);
+    rect(width*0.708333333, height*0.1875 + r, 50, 30, 90);
     fill(0);
-    text("<", 315, 175 + r);
-    text(">", 867, 175 + r);
+    text("<", width*0.2625, height*0.21875 + r);
+    text(">", width*0.7225, height*0.21875 + r);
   }
 
   fill(255);
-  rect(25, 675, 150, 80, 70);
-  rect(1025, 675, 150, 80, 70);
+  rect(width*0.0208333333, height*0.84375, 150, 80, 70);
+  rect(width*0.854166667, height*0.84375, 150, 80, 70);
 
   fill(0);
-  text("home", 65, 730);
-  text("finish", 1060, 730);
+  text("home", width*0.0541666667, height*0.9125);
+  text("finish", width*0.883333333, height*0.9125);
 }
 
 function speechBubble() {
   textSize(25);
   fill(255);
-  rect(700, 100, 200, 200, 90);
+  rect(width*0.583333333, height*0.125, 200, 200, 90);
 
   fill(0);
-  rect(765, 250, 75, 40, 70);
+  rect(width*0.6375, height*0.3125, 75, 40, 70);
 
-  text("Help me pick", 730, 165);
-  text("out an outfit", 725, 200);
-  text("for the day!", 735, 235);
+  text("Help me pick", width*0.6083333333, heught*0.20625);
+  text("out an outfit", 0.604166667, height*0.25);
+  text("for the day!", width*0.6125, height*0.29375);
 
   fill(250);
-  text("ok!", 785, 280);
+  text("ok!", width*0.654166667, height*0.35);
 }
 
 function drawPage() {
@@ -283,65 +283,65 @@ function drawPage() {
     drawButtons();
 
     fill(255);
-    rect(25, 45, 150, 80, 70);
+    rect(width*0.0208333333, height*0.05625, 150, 80, 70);
 
     fill(0);
     textSize(30);
-    text("info", 75, 100);
+    text("info", width*0.0625, height*0.125);
 
     if (info) {
       fill(255);
-      rect(400, 50, 400, 700, 90);
+      rect(width*0.333333333, height*0.0625, 400, 700, 90);
 
       fill(0);
-      circle(730, 100, 50);
-      text("Major:", 450, 180);
-      text("Zodiac Sign:", 450, 420);
-      text("Favorite Color:", 450, 530);
-      text("Favorite Food:", 450, 640);
+      circle(width*0.608333333, height*0.125, 50);
+      text("Major:", width*0.375, height*0.225);
+      text("Zodiac Sign:", width*0.375, height*0.525);
+      text("Favorite Color:", width*0.375, height*0.6625);
+      text("Favorite Food:", width*0.375, height*0.8);
       if (dogPage) {
         textSize(40);
-        text("Dog!", 550, 125);
+        text("Dog!", width*0.458333333, height*0.15625);
         textSize(30);
-        text("Business!", 450, 230);
-        text("Aries!", 450, 470);
-        text("Baby Blue!", 450, 580);
-        text("T-bone steak!", 450, 690);
+        text("Business!", width*0.375, height*0.2875);
+        text("Aries!", width*0.375, height*0.5875);
+        text("Baby Blue!", width*0.375, height*0.725);
+        text("T-bone steak!", width*0.375, height*0.8625);
       } else if (catPage) {
         textSize(40);
-        text("Cat!", 550, 125);
+        text("Cat!", width*0.458333333, height*0.15625);
         textSize(30);
-        text("Literature!", 450, 230);
-        text("Gemini!", 450, 470);
-        text("Burgundy!", 450, 580);
-        text("Sushi!", 450, 690);
+        text("Literature!", width*0.375, height*0.2875);
+        text("Gemini!", width*0.375, 470);
+        text("Burgundy!", width*0.375, 580);
+        text("Sushi!", width*0.375, 690);
       } else if (bunnyPage) {
         textSize(40);
-        text("Bunny!", 520, 125);
+        text("Bunny!", width*0.458333333, height*0.15625);
         textSize(30);
-        text("Architecture!", 450, 230);
-        text("Cancer!", 450, 470);
-        text("Brown!", 450, 580);
-        text("Carrot Cake!", 450, 690);
+        text("Architecture!", width*0.375, height*0.2875);
+        text("Cancer!", width*0.375, 470);
+        text("Brown!", width*0.375, 580);
+        text("Carrot Cake!", width*0.375, 690);
       } else if (mousePage) {
         textSize(40);
-        text("Mouse!", 520, 125);
+        text("Mouse!", width*0.458333333, height*0.15625);
         textSize(30);
-        text("Film!", 450, 230);
-        text("Aquarius!", 450, 470);
-        text("Pink!", 450, 580);
-        text("Mac n' Cheese!", 450, 690);
+        text("Film!", width*0.375, height*0.2875);
+        text("Aquarius!", width*0.375, 470);
+        text("Pink!", width*0.375, 580);
+        text("Mac n' Cheese!", width*0.375, 690);
       } else if (frogPage) {
         textSize(40);
-        text("Frog!", 545, 125);
+        text("Frog!", width*0.458333333, height*0.15625);
         textSize(30);
-        text("Environmental Science!", 450, 230);
-        text("Pisces!", 450, 470);
-        text("Green!", 450, 580);
+        text("Environmental Science!", 450, height*0.2875);
+        text("Pisces!", width*0.375, 470);
+        text("Green!", width*0.375, 580);
         text("Flies! (lol)", 450, 690);
       }
-      text("Today's Weather:", 450, 300);
-      text("" + weather1[info1] + " and " + weather2[info2] + "!", 450, 350);
+      text("Today's Weather:", width*0.375, 300);
+      text("" + weather1[info1] + " and " + weather2[info2] + "!", width*0.375, 350);
 
       fill(255);
       text("X", 715, 110);
