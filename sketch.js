@@ -62,7 +62,7 @@ function preload() {
   
   for (let i = 0; i <= 5; i++) {
     dogOptions[i] = loadImage("./dog outfits/tops/dog" + i + ".PNG");
-    //catOptions[i] = loadImage("./cat" + i + ".PNG");
+    catOptions[i] = loadImage("./cat outfits/tops/cat" + i + ".PNG");
     //bunnyOptions[i] = loadImage("./bunny" + i + ".PNG");
     mouseOptions[i] = loadImage("./mouse outfits/tops/mouse" + i + ".PNG");
     frogOptions[i] = loadImage("./frog outfits/tops/frog" + i + ".PNG");
@@ -70,7 +70,7 @@ function preload() {
 
   for (let j = 6; j <= 11; j++) {
     dogOptions[j] = loadImage("./dog outfits/bottoms/dog" + j + ".PNG");
-    //catOptions[j] = loadImage("./cat" + j + ".PNG");
+    catOptions[j] = loadImage("./cat outfits/bottoms/cat" + j + ".PNG");
     //bunnyOptions[j] = loadImage("./bunny" + j + ".PNG");
     mouseOptions[j] = loadImage("./mouse outfits/bottoms/mouse" + j + ".PNG");
     frogOptions[j] = loadImage("./frog outfits/bottoms/frog" + j + ".PNG");
@@ -78,7 +78,7 @@ function preload() {
 
   for (let k = 12; k <= 17; k++) {
     dogOptions[k] = loadImage("./dog outfits/shoes/dog" + k + ".PNG");
-    //catOptions[k] = loadImage("./cat" + k + ".PNG");
+    catOptions[k] = loadImage("./cat outfits/shoes/cat" + k + ".PNG");
     //bunnyOptions[k] = loadImage("./bunny" + k + ".PNG");
     mouseOptions[k] = loadImage("./mouse outfits/shoes/mouse" + k + ".PNG");
     frogOptions[k] = loadImage("./frog outfits/shoes/frog" + k + ".PNG");
@@ -86,7 +86,7 @@ function preload() {
 
   for (let p = 18; p <= 21; p++) {
     dogOptions[p] = loadImage("./dog outfits/accessories/dog" + p + ".PNG");
-    //catOptions[p] = loadImage("./cat" + p + ".PNG");
+    catOptions[p] = loadImage("./cat outfits/accessories/cat" + p + ".PNG");
     //bunnyOptions[p] = loadImage("./bunny" + p + ".PNG");
     mouseOptions[p] = loadImage("./mouse outfits/accessories/mouse" + p + ".PNG");
     frogOptions[p] = loadImage("./frog outfits/accessories/frog" + p + ".PNG");
