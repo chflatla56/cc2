@@ -144,7 +144,7 @@ class background {
   }
 
   display() {
-    image(image, 0, 0);
+    image(this.image, 0, 0, 1450, 750);
   }
 }
 
