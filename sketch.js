@@ -474,31 +474,41 @@ function mousePressed() {
         welcomePage = false;
         characterPage = true;
         savePage = false;
-        buttonClick.play();
+        if (sound) {
+          buttonClick.play();
+        }
       } else if (mouseX >= width*0.208333333 && mouseX <= width*0.383333333) {
         catPage = true;
         welcomePage = false;
         characterPage = true;
         savePage = false;
-        buttonClick.play();
+        if (sound) {
+          buttonClick.play();
+        }
       } else if (mouseX >= width*0.408333333 && mouseX <= width*0.5875) {
         bunnyPage = true;
         welcomePage = false;
         characterPage = true;
         savePage = false;
-        buttonClick.play();
+        if (sound) {
+          buttonClick.play();
+        }
       } else if (mouseX >= width*0.605833333 && mouseX <= width*0.789166667) {
         mousePage = true;
         welcomePage = false;
         characterPage = true;
         savePage = false;
-        buttonClick.play();
+        if (sound) {
+          buttonClick.play();
+        }
       } else if (mouseX >= width*0.804166667 && mouseX <= width*0.993333333){
         frogPage = true;
         welcomePage = false;
         characterPage = true;
         savePage = false;
-        buttonClick.play();
+        if (sound) {
+          buttonClick.play();
+        }
       }
     } 
   
@@ -533,7 +543,9 @@ function mousePressed() {
         } else if (shoeCount == 17) {
           shoeCount = 13;
         }
-        buttonClick.play();
+        if (sound) {
+          buttonClick.play();
+        }
       } 
     } else if (mouseX >= width*0.25 && mouseX <= (width*0.291666667) - 10) {
       if (mouseY >= height*0.1875 && mouseY <= height*0.225) {
@@ -563,25 +575,33 @@ function mousePressed() {
         } else if (shoeCount <= 13) {
           shoeCount = 17;
         } 
-        buttonClick.play();
+        if (sound) {
+          buttonClick.play();
+        }
       }
     }
 
     if (mouseX >= width*0.0208333333 && mouseX <= width*0.145833333 && mouseY >= height*0.05625 && mouseY <= height*0.15625 && !info) {
       info = true;
-      buttonClick.play();
+      if (sound) {
+        buttonClick.play();
+      }
     } 
 
     if (mouseX >= (width*0.5875) - 25 && mouseX <= (width*0.629166667) - 30 && mouseY >= height*0.09375 && mouseY <= height*0.15625 && info) {
       info = false;
-      buttonClick.play();
+      if (sound) {
+        buttonClick.play();
+      }
     }
   }
 
   if (characterPage && !click) {
     if (mouseX >= (width*0.6375) - 20 && mouseX <= (width*0.7) - 20 && mouseY >= height*0.3125 && mouseY <= height*0.3625) {
        click = true;
-       buttonClick.play();
+       if (sound) {
+        buttonClick.play();
+      }
     }
   }
 
@@ -596,10 +616,12 @@ function mousePressed() {
         mousePage = false;
         frogPage = false;
         click = false;
-        buttonClick.play();
-        if (!flashCassanova.isPlaying()) {
-          flashCassanova.play();
-          bratzMagicHair.stop();
+        if (sound) {
+          buttonClick.play();
+          if (!flashCassanova.isPlaying()) {
+            flashCassanova.play();
+            bratzMagicHair.stop();
+          }
         }
 
         info1 = int(random(weather1.length));
@@ -612,9 +634,11 @@ function mousePressed() {
       welcomePage = false;
       savePage = true;
       characterPage = false;
-      buttonClick.play();
-      flashCassanova.stop();
-      bratzMagicHair.play();
+      if (sound) {
+        buttonClick.play();
+        flashCassanova.stop();
+        bratzMagicHair.play();
+      }
     } else if (savePage) {
       saveCanvas('myCharacter.jpg');
       buttonClick.play();
@@ -627,21 +651,26 @@ function mousePressed() {
     if (mouseX >= width*0.166666667 && mouseX <= (width*0.29166667) && mouseY >= height*0.84375 && mouseY <= height*0.94375){
       characterPage = true;
       savePage = false;
-      buttonClick.play();
+      if (sound) {
+        buttonClick.play();
 
-      bratzMagicHair.stop();
-      flashCassanova.play();
-
+        bratzMagicHair.stop();
+        flashCassanova.play();
+      }
     }
   }
 
   if (mouseX >= width*0.916666667+30 && mouseX <= width*0.958333333+30 && mouseY >= height*0.0625-20 && mouseY <= height*0.125-20){
     if (sound) {
       sound = false;
-      buttonClick.play();
+      if (sound) {
+        buttonClick.play();
+      }
     } else {
       sound = true;
-      buttonClick.play();
+      if (sound) {
+        buttonClick.play();
+      }
     }
   }
 }
