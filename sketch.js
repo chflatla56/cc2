@@ -46,11 +46,15 @@ let sound = true;
 let speaker1;
 let speaker2;
 
+let pinkCloset;
+
 function preload() {
   hennyPenny = loadFont("./HennyPenny-Regular.ttf");
   buttonClick = loadSound("./buttonClick.wav");
   bratzMagicHair = loadSound("./bratzMagicHair.mp3");
   flashCassanova = loadSound("./flashCassanova.mp3");
+
+  pinkCloset = loadImage("./closet.PNG");
 
   dogBase = loadImage("./animals/dog.PNG");
   catBase = loadImage("./animals/cat.PNG");
@@ -188,6 +192,7 @@ function drawFrog(x, y) {
 }
 
 function drawWelcomePage() {
+
   push();
   scale(0.8);
   drawDog(width*-0.1875+50, height*0.25-30);
@@ -204,26 +209,31 @@ function drawWelcomePage() {
 }
 
 function drawDogPage(){
+  image(closet,0,0,1450,750);
   drawDog(width*0.1875+100, 0);
   drawOutfit(dogOptions, width*0.1875+100, 0);
 }
 
 function drawCatPage() {
+  image(closet,0,0,1450,750);
   drawCat(width*0.1875+100, 0);
   drawOutfit(catOptions, width*0.1875+100, 0);
 }
 
 function drawBunnyPage() {
-  drawBunny(width*0.1875+100, 50);
-  drawOutfit(bunnyOptions, width*0.1875+100, 0);
+  image(closet,0,0,1450,750);
+  drawBunny(width*0.1875+100, 25);
+  drawOutfit(bunnyOptions, width*0.1875+100, 25);
 }
  
 function drawMousePage() {
+  image(pinkCloset,0,0,1450,750);
   drawMouse(width*0.1875+100, 0);
   drawOutfit(mouseOptions, width*0.1875+100, 0);
 }
 
 function drawFrogPage() {
+  image(closet,0,0,1450,750);
   drawFrog(width*0.1875+100, 0);
   drawOutfit(frogOptions, width*0.1875+100, 0);
 }
@@ -243,6 +253,7 @@ function drawOutfit(arr, x, y) {
 }
 
 function drawButtons() {
+  noStroke();
   textSize(30);
   for (let r = 0; r < 600; r = r + 150) {
     fill(255);
@@ -263,6 +274,7 @@ function drawButtons() {
 }
 
 function speechBubble() {
+  noStroke();
   textSize(25);
   fill(255);
   rect(width*0.583333333, height*0.125, 200, 200, 90);
