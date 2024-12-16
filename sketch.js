@@ -60,11 +60,17 @@ let bunnyCloset;
 let dogCloset;
 let frogCloset;
 
+let loud;
+let mute;
+
 function preload() {
   hennyPenny = loadFont("./HennyPenny-Regular.ttf");
   buttonClick = loadSound("./buttonClick.wav");
   bratzMagicHair = loadSound("./bratzMagicHair.mp3");
   flashCassanova = loadSound("./flashCassanova.mp3");
+  
+  loud = loadImage("./loud.PNG");
+  mute = loadImage("./mute.PNG");
 
   closetm = loadImage("./closetm.PNG");
   closetb = loadImage("./closetb.PNG");
@@ -202,9 +208,9 @@ function draw() {
   textSize(30);
   fill(0);
   if (sound) {
-    //speaker
+    image(loud,width*0.916666667+30,height*0.0625-20,50,50);
   } else {
-    //crossed out speaker
+    image(mute,width*0.916666667+30,height*0.0625-20,50,50);
     flashCassanova.stop();
     bratzMagicHair.stop();
   }
@@ -629,7 +635,7 @@ function mousePressed() {
     }
   }
 
-  if (mouseX >= width*0.916666667 && mouseX <= width*0.958333333 && mouseY >= height*0.0625 && mouseY <= height*0.125){
+  if (mouseX >= width*0.916666667+30 && mouseX <= width*0.958333333+30 && mouseY >= height*0.0625-20 && mouseY <= height*0.125-20){
     if (sound) {
       sound = false;
       buttonClick.play();
