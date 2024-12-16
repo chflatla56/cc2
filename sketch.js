@@ -291,10 +291,10 @@ function drawPage() {
 
     if (info) {
       fill(255);
-      rect(width*0.333333333, height*0.0625, 400, 700, 90);
+      rect(width*0.333333333, (height*0.0625), 450, 650, 90);
 
       fill(0);
-      circle(width*0.608333333, height*0.125, 50);
+      circle((width*0.608333333) - 25, height*0.125, 50);
       text("Major:", width*0.375, height*0.225);
       text("Zodiac Sign:", width*0.375, height*0.525);
       text("Favorite Color:", width*0.375, height*0.6625);
@@ -344,7 +344,7 @@ function drawPage() {
       text("" + weather1[info1] + " and " + weather2[info2] + "!", width*0.375, height*0.4375);
 
       fill(255);
-      text("X", width*0.595833333, height*0.1375);
+      text("X", (width*0.595833333) - 20, height*0.1375);
     } 
   } else {
     speechBubble();
@@ -490,7 +490,7 @@ function mousePressed() {
       buttonClick.play();
     } 
 
-    if (mouseX >= width*0.5875 && mouseX <= width*0.629166667 && mouseY >= height*0.09375 && mouseY <= height*0.15625 && info) {
+    if (mouseX >= (width*0.5875) - 25 && mouseX <= (width*0.629166667) - 30 && mouseY >= height*0.09375 && mouseY <= height*0.15625 && info) {
       info = false;
       buttonClick.play();
     }
@@ -504,7 +504,7 @@ function mousePressed() {
   }
 
   if(characterPage || savePage) {
-    if (mouseY >= height*0.84375 && mouseY <= height*0.94375 && mouseX >= width*0.0208333333 && mouseX <= width*0.145833333) {
+    if (mouseY >= height*0.84375 && mouseY <= height*0.94375 && mouseX >= width*0.0208333333 && mouseX <= (width*0.145833333) - 50) {
         welcomePage = true;
         savePage = false;
         characterPage = false;
