@@ -504,7 +504,7 @@ function mousePressed() {
   }
 
   if(characterPage || savePage) {
-    if (mouseY >= height*0.84375 && mouseY <= height*0.94375 && mouseX >= width*0.0208333333 && mouseX <= (width*0.145833333) - 50) {
+    if (mouseY >= height*0.84375 && mouseY <= height*0.94375 && mouseX >= width*0.0208333333 && mouseX <= (width*0.145833333) - 30) {
         welcomePage = true;
         savePage = false;
         characterPage = false;
@@ -525,7 +525,7 @@ function mousePressed() {
     }
   }
 
-  if (mouseY >= height*0.84375 && mouseY <= height*0.94375 && mouseX >= width*0.854166667 && mouseX <= width*0.979166667) {
+  if (mouseY >= height*0.84375 && mouseY <= height*0.94375 && mouseX >= width*0.854166667 && (mouseX <= width*0.979166667 -30) ) {
     if (characterPage) {  
       welcomePage = false;
       savePage = true;
@@ -542,7 +542,7 @@ function mousePressed() {
   if (savePage) {
     flashCassanova.stop();
     bratzMagicHair.play();
-    if (mouseX >= width*0.166666667 && mouseX <= width*0.29166667 && mouseY >= height*0.84375 && mouseY <= height*0.94375){
+    if (mouseX >= width*0.166666667 && mouseX <= (width*0.29166667) && mouseY >= height*0.84375 && mouseY <= height*0.94375){
       characterPage = true;
       savePage = false;
       buttonClick.play();
