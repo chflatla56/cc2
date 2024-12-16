@@ -46,7 +46,19 @@ let sound = true;
 let speaker1;
 let speaker2;
 
-let pinkCloset;
+let closetm;
+let closetc;
+let closetb;
+let closetd;
+let closetf;
+
+let sparklePage;
+
+let mouseCloset;
+let catCloset;
+let bunnyCloset;
+let dogCloset;
+let frogCloset;
 
 function preload() {
   hennyPenny = loadFont("./HennyPenny-Regular.ttf");
@@ -54,7 +66,13 @@ function preload() {
   bratzMagicHair = loadSound("./bratzMagicHair.mp3");
   flashCassanova = loadSound("./flashCassanova.mp3");
 
-  pinkCloset = loadImage("./closet.PNG");
+  closetm = loadImage("./closetm.PNG");
+  closetb = loadImage("./closetb.PNG");
+  closetc = loadImage("./closetc.PNG");
+  closetd = loadImage("./closetd.PNG");
+  closetf = loadImage("./closetf.PNG");
+
+  sparklePage = loadImage("./sparklePage.PNG");
 
   dogBase = loadImage("./animals/dog.PNG");
   catBase = loadImage("./animals/cat.PNG");
@@ -111,6 +129,23 @@ function setup() {
   info1 = int(random(weather1.length));
   info2 = int(random(weather2.length));
 
+
+  dogCloset = new background(closetd);
+  catCloset = new background(closetc);
+  bunnyCloset = new background(closetb);
+  mouseCloset = new background(closetm);
+  frogCloset = new background(closetf);
+  sparkle = new background(sparklePage);
+}
+
+class background {
+  constructor(image){
+    this.image = image;
+  }
+
+  display() {
+    image(image, 0, 0);
+  }
 }
 
 function draw() {
@@ -133,14 +168,19 @@ function draw() {
 
   } else if (characterPage) {
     if (dogPage) {
+      dogCloset.display();
       drawDogPage();
     } else if (catPage) {
+      catCloset.display();
       drawCatPage();
     } else if (bunnyPage) {
+      bunnyCloset.display();
       drawBunnyPage();
     } else if (mousePage) {
+      mouseCloset.display();
       drawMousePage();
     } else if (frogPage) {
+      frogCloset.display();
       drawFrogPage();
     }
     drawPage();
@@ -150,6 +190,7 @@ function draw() {
       bratzMagicHair.stop();
     }
   } else if (savePage) {
+    sparkle.display();
     drawSavePage();
 
     if (!bratzMagicHair.isPlaying() && sound) {
@@ -192,14 +233,45 @@ function drawFrog(x, y) {
 }
 
 function drawWelcomePage() {
+  sparkle.display();
 
   push();
   scale(0.8);
   drawDog(width*-0.1875+50, height*0.25-30);
+  rand1 = 2;
+  rand2 = 9;
+  rand3 = 15;
+  rand4 = 18;
+  drawOutfit(dogOptions, width*-0.1875+50, height*0.25-30);
+
   drawCat(width*0.0625+50, height*0.25-30);
+  rand1 = 2;
+  rand2 = 9;
+  rand3 = 15;
+  rand4 = 21;
+  drawOutfit(catOptions, width*0.0625+50, height*0.25-30);
+
   drawBunny(width*0.3125+50, height*0.25-30);
+  rand1 = 2;
+  rand2 = 10;
+  rand3 = 15;
+  rand4 = 19;
+  drawOutfit(bunnyOptions, width*0.3125+50, height*0.25-30);
+
   drawMouse(width*0.5625+50, height*0.25-30);
+  rand1 = 2;
+  rand2 = 8;
+  rand3 = 16;
+  rand4 = 20;
+  drawOutfit(mouseOptions, width*0.5625+50, height*0.25-30);
+
   drawFrog(width*0.8125+100, height*0.25-30);
+  rand1 = 1;
+  rand2 = 7;
+  rand3 = 17;
+  rand4 = 19;
+  drawOutfit(frogOptions, width*0.8125+100, height*0.25-30);
+
   pop();
 
   topCount = 0;
@@ -209,41 +281,36 @@ function drawWelcomePage() {
 }
 
 function drawDogPage(){
-  image(closet,0,0,1450,750);
   drawDog(width*0.1875+100, 0);
   drawOutfit(dogOptions, width*0.1875+100, 0);
 }
 
 function drawCatPage() {
-  image(closet,0,0,1450,750);
   drawCat(width*0.1875+100, 0);
   drawOutfit(catOptions, width*0.1875+100, 0);
 }
 
 function drawBunnyPage() {
-  image(closet,0,0,1450,750);
   drawBunny(width*0.1875+100, 25);
   drawOutfit(bunnyOptions, width*0.1875+100, 25);
 }
  
 function drawMousePage() {
-  image(pinkCloset,0,0,1450,750);
   drawMouse(width*0.1875+100, 0);
   drawOutfit(mouseOptions, width*0.1875+100, 0);
 }
 
 function drawFrogPage() {
-  image(closet,0,0,1450,750);
   drawFrog(width*0.1875+100, 0);
   drawOutfit(frogOptions, width*0.1875+100, 0);
 }
 
 function drawOutfit(arr, x, y) {
   if (welcomePage) {
-    //image(arr[rand3], x, y, 750, 750);
-    //image(arr[rand2], x, y, 750, 750);
-    //image(arr[rand1], x, y, 750, 750);
-    //image(arr[rand4], x, y, 750, 750);
+    image(arr[rand3], x, y, 750, 750);
+    image(arr[rand2], x, y, 750, 750);
+    image(arr[rand1], x, y, 750, 750);
+    image(arr[rand4], x, y, 750, 750);
   } else if (characterPage || savePage) {
     image(arr[shoeCount], x, y, 750, 750);
     image(arr[bottomCount], x, y, 750, 750);
@@ -364,7 +431,6 @@ function drawPage() {
 }
 
 function drawSavePage() {
-
   if (dogPage) {
     drawDogPage();
   } else if (catPage) {
