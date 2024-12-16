@@ -258,7 +258,7 @@ function drawButtons() {
   rect(width*0.854166667, height*0.84375, 150, 80, 70);
 
   fill(0);
-  text("home", width*0.0541666667-5, height*0.9125);
+  text("home", width*0.0541666667-10, height*0.9125);
   text("finish", width*0.883333333-5, height*0.9125);
 }
 
@@ -372,8 +372,8 @@ function drawSavePage() {
 
   fill(0);
   text("home", width*0.0541666667-10, height*0.9125);
-  text("save", width*0.891666667, height*0.90625);
-  text("back", width*0.204166667, height*0.9125);
+  text("save", width*0.891666667-10, height*0.90625);
+  text("back", width*0.204166667-10, height*0.9125);
 
   textSize(30);
   fill(255);
@@ -438,14 +438,14 @@ function mousePressed() {
           topCount = 1;
         }
         buttonClick.play();
-      } else if (mouseY >= height*0.5625 && mouseY <= height*0.6) {
+      } else if (mouseY >= height*0.5625+3 && mouseY <= height*0.6+10) {
         if (bottomCount < 11) {
           bottomCount++;
         } else if (bottomCount == 11) {
           bottomCount = 7;
         }
         buttonClick.play();
-      } else if (mouseY >= height*0.75 && mouseY <= height*0.7875) {
+      } else if (mouseY >= height*0.75+16 && mouseY <= height*0.7875+17) {
         if (shoeCount < 17) {
           shoeCount++;
         } else if (shoeCount == 17) {
@@ -468,14 +468,14 @@ function mousePressed() {
           topCount = 5;
         }
         buttonClick.play();
-      } else if (mouseY >= height*0.5625 && mouseY <= height*0.6) {
+      } else if (mouseY >= height*0.5625+3 && mouseY <= height*0.6+10) {
         if (bottomCount > 7) {
           bottomCount--;
         } else if (bottomCount <= 7) {
           bottomCount = 11;
         }
         buttonClick.play();
-      } else if (mouseY >= height*0.75 && mouseY <= height*0.7875) {
+      } else if (mouseY >= height*0.75+10 && mouseY <= height*0.7875+10) {
         if (shoeCount > 13) {
           shoeCount--;
         } else if (shoeCount <= 13) {
