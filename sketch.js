@@ -149,8 +149,6 @@ class background {
 }
 
 function draw() {
-  background(0);
-
   if (welcomePage) {
     drawWelcomePage();
 
